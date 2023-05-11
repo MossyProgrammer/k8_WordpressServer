@@ -1,6 +1,6 @@
 ## AKS - Kubernetes Wordpress Server
 ### Project Overview:
-A Kubernetes cluster running a content management site, with a web front-end (Wordpress) running on one of the containers and a SQL database/back-end running on another. To deploy, please reference deployment.md.
+A Kubernetes cluster running a content management site, with a web front-end (Wordpress) running on one of the containers and a SQL database/back-end running on another. To deploy, please reference deployment.md (link to)
 ### Services Being Used:
 Azure Kubernetes Service(AKS) - hypervisor and container instances
 ### Data Flow Diagram:
