@@ -23,8 +23,12 @@ az aks get-credentials --resource-group [enter_ResourceGroup] --name [enter_AKSC
 ```
 Verify connection with: `kubectl get nodes`
 ### Deploying Wordpress and MySQL container instances:
-Connect to cluster
-
+Connect to cluster:
+```
+az account set --subscription [subscription]
+az aks get-credentials --resource-group [enter_ResourceGroup] --name [enter_AKSCluster_name]
+```
+Deploy Wordpress and MySQL:
 ```
 kubectl apply -f wordpress-deployment.yaml
 kubectl apply -f mysql-deployment.yaml
@@ -49,7 +53,8 @@ EOF
 
 kubectl apply -k ./
 ```
-Get External IP by `kubectl get service wordpress --watch`
+Get External IP to Wordpress: `kubectl get service wordpress --watch`
+Configure in Wordpress UI from there. 
 
 
 Additional Code referenced from: add link 
