@@ -50,3 +50,6 @@ EOF
 kubectl apply -k ./
 ```
 Get External IP by `kubectl get service wordpress --watch`
+
+
+Additional Code referenced from: add link 
