@@ -1,23 +1,27 @@
-### Deploying AKS Cluster (using PowerShell):
-
-```
-New-AzAksCluster -ResourceGroupName [enter_ResourceGroup] -Name [enter_AKSCluster_name] -NodeCount 1 -GenerateSshKey -WorkspaceResourceId <WORKSPACE_RESOURCE_ID>
-
-Install-AzAksKubectl
-
-Import-AzAksCredential -ResourceGroupName [enter_ResourceGroup] -Name [enter_AKSCluster_name]
-```
-Verify connection with: `kubectl get nodes`
-
 ### Deploying AKS Cluster (using Azure CLI):
 ```
-az aks create -g [enter_ResourceGroup] -n [enter_AKSCluster_name] --enable-managed-identity --node-count 1 --enable-addons monitoring --enable-msi-auth-for-monitoring  --generate-ssh-keys
-
+export RESOURCE_GROUP_NAME=re-lee
+export AKS_NAME=autotest_clusterccfinal
+az aks create \
+	--resource-group $RESOURCE_GROUP_NAME \
+	--name $AKS_NAME \
+	--os-sku Ubuntu \
+	--enable-managed-identity \
+	--node-count 1 \
+	--enable-addons monitoring \
+	--generate-ssh-keys \
+	--location eastus\
+	--enable-cluster-autoscaler \
+	--max-count 5 \
+	--min-count 1 \
+	--network-plugin kubenet \
+	--load-balancer-sku basic \
+	--tier free
+az aks open-port --port 80 --resource-group $RESOURCE_GROUP_NAME --name $AKS_NAME
 az aks install-cli
 az aks get-credentials --resource-group [enter_ResourceGroup] --name [enter_AKSCluster_name]
 ```
-
-
+Verify connection with: `kubectl get nodes`
 ### Deploying Wordpress and MySQL container instances:
 Connect to cluster
 
@@ -45,4 +49,4 @@ EOF
 
 kubectl apply -k ./
 ```
-
+Get External IP by `kubectl get service wordpress --watch`
