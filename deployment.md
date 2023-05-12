@@ -1,6 +1,6 @@
 ### Deploying AKS Cluster (using Azure CLI):
 To deploy the intial AKS cluster, run the following commands in Azure CLI:
-(If you want to deploy from an ARM template, reference attached template and continue from installing MySQL and Wordpress)
+(If you want to deploy from an ARM template or this method doesn't work for some reason, reference attached template and continue from installing MySQL and Wordpress)
 ```
 export RESOURCE_GROUP_NAME=[enter_ResourceGroup]
 export AKS_NAME=[enter_AKSCluster_name]
