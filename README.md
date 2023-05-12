@@ -6,16 +6,17 @@ A Kubernetes cluster running a content management site, with a web front-end (Wo
 ### Architecture Diagram: (wip)
 ### Services Being Used:
 Azure Kubernetes Service(AKS) - hypervisor and container instances
-### Adherence to Azure's Well Architected Framework: (wip)
+### Adherence to Azure's Well Architected Framework:
 - Reliability:
-  - Auto-scaling, if load exceeds a certain threshold
+  - Auto-scaling and load-balancing if usage exceeds a certain threshold
 - Security:
+  -SSH and other non-used ports closed for outside traffic, secrets generation for SQL server
 - Cost Optimization:
-  - Standard B1s VMs, Basic 'free' tier Kubernetes, auto-scaling, and limited node pools
+  - Standard B1s VMs, Basic 'free' tier Kubernetes, auto-scaling, and limited node pools to minimize cost
 - Operational Excellence:
-  - Autoscaling, load-balancing
+  - Auto-scaling, load-balancing, and deployment can be automated through provided methods
 - Performance Efficiency:
-  - Autoscaling, load-balancing
+  - Auto-scaling, load-balancing, and appropriate VM sku for the provided outcomes
 ### Future Revisions:
 - Add additional content to the webpage itself, because it is currently very bare bones. Not that I know what to put on it, but that's beside the point.
 - Deploy a website of my own onto the service rather than go through Wordpress.
