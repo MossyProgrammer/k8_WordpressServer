@@ -2,7 +2,8 @@
 ### Project Overview:
 A Kubernetes cluster running a content management site, with a web front-end (Wordpress) running on one of the containers and a SQL database/back-end running on another. To deploy, please reference deployment.md
 
-### Data Flow Diagram: (wip)
+### Data Flow Diagram:
+![Data Flow Diagram](https://github.com/MossyProgrammer/k8_WordpressServer/blob/adbb326cc8052fdec59d67d0fddcf59d16d5b49c/Data%20Flow%20Diagram.png)
 ### Architecture Diagram: (wip)
 ### Services Being Used:
 Azure Kubernetes Service(AKS) - hypervisor and container instances
